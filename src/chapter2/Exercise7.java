@@ -1,23 +1,34 @@
 package chapter2;
-import java.util.Random;
-
+import java.util.*;
+/** Coin flipper
+* @author Anton Shashuk
+* @version 1.0
+*/
 class Coin{
-	Boolean state; // Just a coin with a state of true or false
+	/** Just a coin with a state of "Heads" or "Tails"
+	* @throws exceptions No exceptions thrown
+	*/
+	String state;
 }
-class Flipper{        //Method  
-	void Flip(Coin c){
-		Random rand = new Random(47);
-		int i = rand.nextInt(1000);
-		if (i<501) c.state = true;
-			else c.state = false;
+class Flipper{        
+	static String Flip(Coin c){ 
+		/** A class that contains a static method that flips the coin
+		* @param argument is the coin itself
+		* @throws exceptions No exceptions thrown (duh)
+		* @returns a string that is written into the Coin's state; really wanted to play with this :)
+		*/
+		Boolean flp;   //Just for the sake of usage the logical operators output
+		Random rand = new Random();
+		int i = rand.nextInt(2);
+		flp = (i<1);
+		if (flp != true) return "Heads";
+		else return "Tails";
 	}
 }
 public class Exercise7 {
 	public static void main(String[] args){
 		Coin c = new Coin();
-		Flipper f = new Flipper();
-		f.Flip(c);
-		if (c.state = true) System.out.println("It's heads!");
-		else System.out.println("It's tails"); // I know 
+		c.state=Flipper.Flip(c); //Yay!
+		System.out.println("You have flipped for " + c.state);
 	}
 }

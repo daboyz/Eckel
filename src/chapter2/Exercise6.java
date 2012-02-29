@@ -11,7 +11,7 @@ public class Exercise6 {
 		Dog fido = new Dog();
 		fido = spot;
 		System.out.println(spot==scruffy); //Ok, this is false.
-		System.out.println(spot==fido);   //But why is this true?
+		System.out.println(spot==fido);   //But why is this true? Aren't the identifiers different as the chapter teaches us?
 		System.out.println(fido==scruffy);
 		System.out.println(spot.equals(scruffy));
 		System.out.println(spot.equals(fido)); // Same here - why is the result true?
