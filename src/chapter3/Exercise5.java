@@ -9,7 +9,7 @@ public class Exercise5 {
 		do {
 			if (b%2==1) result = "1" + result;
 			else result = "0" + result;
-			b >>>= 1;            //Unsigned shift is used for ~ to work
+			b >>>= 1;            //Unsigned shift is used in case "a" is negative
 		} while (b!=0);          //The do-while is used for zero integers to be converted as well
 		return result;
 	}
