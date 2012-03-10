@@ -16,9 +16,8 @@ public class Exercise9 {
 			i2 = i2 + i1;
 			c--;            // no need for "c" check here
 		}
-		
 	}
 	public static void main(String[] args){
 		fibonacci(10);
 	}
-} 
+}

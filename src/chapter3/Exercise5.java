@@ -13,7 +13,7 @@ public class Exercise5 {
 		} while (b!=0);          //The do-while is used for zero integers to be converted as well
 		return result;
 	}
-	 
+	
 	public static void main(String[] args){
 		System.out.println("AND: " + intToBinStr(0x1010 & 0x0101));
 		System.out.println("OR: " + intToBinStr(0x1010 | 0x0101));

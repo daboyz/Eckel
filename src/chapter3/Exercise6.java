@@ -39,5 +39,5 @@ public class Exercise6 {
 		return 0;
 		else
 		return -1;
-		} 
+		}
 }

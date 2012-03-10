@@ -12,8 +12,7 @@ public class Exercise8 {
 			case 75 : System.out.println("Seventy five"); // break;
 			case 91 : System.out.println("Ninety one"); // break;
 			default : System.out.println("Other");
-			}
-				 
+			} 
 		}
 	}
-} 
+}
