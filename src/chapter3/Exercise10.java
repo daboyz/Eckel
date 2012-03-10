@@ -26,5 +26,5 @@ public class Exercise10 {
 				else if ((i3*10+i4)*(i1*10+i2)==i) System.out.println(i + " = " + i3 + i4 + " * " + i1 + i2);
 				else if ((i3*10+i4)*(i2*10+i1)==i) System.out.println(i + " = " + i3 + i4 + " * " + i2 + i1);
 				}
-			} 
-		}
+		 } 
+	} 
