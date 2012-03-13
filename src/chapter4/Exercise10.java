@@ -13,9 +13,7 @@ class FinalEyes{
 public class Exercise10 {
 	public static void main(String[] args){
 		 FinalEyes are = new  FinalEyes();
-		 are.errorgate((float) 3.14); //Default value is changed
-		 System.gc();                 //Marking object for garbage collection is silent
-		 new  FinalEyes();            //Variable initialized
-		 System.gc();				  //Marking object for garbage collection invokes message
+		 are.errorgate((float) 3.14); //Default value is changed, marking object for garbage collection would be silent
+		 new  FinalEyes();            //Variable initialized, marking object for garbage collection would invoke message
 	}
 }
