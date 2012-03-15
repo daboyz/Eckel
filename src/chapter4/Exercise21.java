@@ -6,7 +6,7 @@ public class Exercise21 {
 	}
 	public static void main(String[] args){
 		for(Currency c : Currency.values()){
-			System.out.print(c + " ");
+			System.out.println("Value: "+ c + ", ordinal: " + c.ordinal());
 		}
 	}
 }
