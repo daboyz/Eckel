@@ -33,30 +33,33 @@ void testSingleton() {
 	Soup2.access().f();
 	}
 }
- *
  */
 class Connection{
-	private Connection(){
-			System.out.println("This is a connection");
+	private Connection(int n){
+			System.out.println("Creating connection number " + n);
 		}
-	protected static Connection makeConn(){ // Allow creation via static method
-		return new Connection();
+	public static Connection makeConnection(int i){ // Allow creation via static method
+		return new Connection(i);
 	}
 }
+
 class ConnectionManager{
-	static {
-			Connection[] connmgr = new Connection[5];
-			for (int i=0; i<5; i++){  //Creating Connection objects for the array
-				connmgr[i] = Connection.makeConn();
-				}
-			int n=0;
-		}
-		static Connection access(){
-			if (n<5){
-				return connmgr[n];
-				n++;
-			}
-			else return null;
+	private static int conncount=0;
+	private ConnectionManager(){
+		connInit();
+	}
+	private static ConnectionManager cm = new ConnectionManager(); // Initialization of Connection Manager
+	private static void connInit(){
+		Connection[] connmgr = new Connection[5];
+		for (int i=0; i<5; i++)  //Creating Connection objects for the array
+			connmgr[i] = Connection.makeConnection(i);
+	}
+	public static Connection access(){
+		if (conncount<5){
+			return ConnectionManager.connmgr[conncount];
+			System.out.println("Accessing connection number " + conncount);
+			conncount++;}
+		else return null;
 	}
 }
 public class Exercise8 {
