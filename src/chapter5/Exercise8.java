@@ -36,35 +36,39 @@ void testSingleton() {
  */
 class Connection{
 	private Connection(int n){
-			System.out.println("Creating connection number " + n);
+			System.out.println("Creating connection " + n);
 		}
 	public static Connection makeConnection(int i){ // Allow creation via static method
 		return new Connection(i);
+	}
+	public void connect(int a){
+		System.out.println("Connecting to socket " + a);
 	}
 }
 
 class ConnectionManager{
 	private static int conncount=0;
-	private ConnectionManager(){
-		connInit();
-	}
-	private static ConnectionManager cm = new ConnectionManager(); // Initialization of Connection Manager
+	private static Connection[] connmgr = new Connection[5];
 	private static void connInit(){
-		Connection[] connmgr = new Connection[5];
-		for (int i=0; i<5; i++)  //Creating Connection objects for the array
+			for (int i=0; i<5; i++)  //Creating Connection objects for the array
 			connmgr[i] = Connection.makeConnection(i);
 	}
+	private ConnectionManager(){ //Construction calls initialization method
+		connInit();
+	}
+	private static ConnectionManager cm = new ConnectionManager(); //Singleton pattern
+	
 	public static Connection access(){
 		if (conncount<5){
-			return ConnectionManager.connmgr[conncount];
-			System.out.println("Accessing connection number " + conncount);
-			conncount++;}
-		else return null;
+			System.out.println("Accessing connection " + conncount);
+			return connmgr[conncount++];
+			}
+		else return null; //I hope this is what is meant by "null reference"
 	}
 }
 public class Exercise8 {
 	public static void main(String[] args){
-		for (int n=1; n<7; n++)
-			ConnectionManager.access();
+		for (int n=0; n<7; n++)
+			ConnectionManager.access().connect(n); //You may notice "Exception in thread "main" java.lang.NullPointerException" message caused by null returned when (n>4)
 	}
 }
