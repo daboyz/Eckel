@@ -4,4 +4,4 @@ public class Exercise1 {  //A class. In a package. For a gentleman.
 	public static void main(String[] args){ 
 		System.out.println("Resistance is futile!");
 	}
-} // Please see chapter5_outer for part two of the exercise
+} // Please see chapter5_outer.Exercise1_outer for part two of the exercise

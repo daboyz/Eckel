@@ -7,4 +7,3 @@ public class Exercise1_outer {  //Had to name this class differently for the sak
 		System.out.println("Resistance isn't that futile!");
 	}
 }
-
