@@ -10,7 +10,7 @@ package chapter6;
 	public String toString() { return s; }
 }
 
-class Detergent1 extends Cleanser1 {
+class Detergent1{
 	public void foam() { append(" foam()"); }
 	Cleanser1 cleanser = new Cleanser1();
 	public void append(String a){   //Delegated methods block
