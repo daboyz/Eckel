@@ -8,12 +8,13 @@ class Simple{
 }
 
 public class Exercise1 {
-	Simple smpl;
-	static void useSimple(){
-		Simple smpl = new Simple(); //Lazy initialization
+	 Simple smpl;
+	void useSimple(){
+		smpl = new Simple(); //Lazy initialization
 		smpl.alloy();
 	}
 	public static void main(String[] args){
-		useSimple();
+		Exercise1 ex1 = new Exercise1();
+		ex1.useSimple();
 	}
 }
