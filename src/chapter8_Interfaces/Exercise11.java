@@ -30,7 +30,7 @@ class ProducerAdapter implements Processor{
 		return "ProducerAdapter"; 
 		}
 	Producer prod;
-	public ProducerAdapter(Producer prod) {	//Constructor saves argument's Producer into a field of Adapter 
+	public ProducerAdapter(Producer prod) {	//Constructor saves argument's Producer object into a field of Adapter 
 		this.prod = prod;
 	}
 	public String process(Object input) {	//A Producer filed's method is called via Processor interface 
