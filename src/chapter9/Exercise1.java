@@ -17,7 +17,9 @@ public class Exercise1 {
 	public static void main(String[] args) {
 		Outer outer = new Outer();
 		outer.getInner();
+		Outer.Inner i = outer.getInner();	//Alternate usage
 	}
 }/* Output:
+Inner class created
 Inner class created
 */
