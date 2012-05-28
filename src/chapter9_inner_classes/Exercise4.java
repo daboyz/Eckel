@@ -1,4 +1,4 @@
-package chapter9;
+package chapter9_inner_classes;
 // Exercise 4: Add a method to the class Sequence.SequenceSelector that produces the reference to the outer class Sequence.
 
 interface Selector1 {

@@ -1,4 +1,4 @@
-package chapter9;
+package chapter9_inner_classes;
 /* Exercise 2: Create a class that holds a String, and has a toString( ) method that displays this String.
 * Add several instances of your new class to a Sequence object, then display them.
 */
