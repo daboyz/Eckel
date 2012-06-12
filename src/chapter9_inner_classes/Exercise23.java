@@ -13,9 +13,15 @@ interface U{
 class A {
 	U getU(){
 		return new U(){
-			public void a(){};
-			public void b(){};
-			public void c(){};
+			public void a(){
+				System.out.println("a()");
+			};
+			public void b(){
+				System.out.println("b()");
+			};
+			public void c(){
+				System.out.println("c()");
+			};
 		};
 	}
 }
@@ -29,7 +35,7 @@ class B{
 	}
 	void moveU(U[] u){
 		int i = 0;
-		while (i != u.length+1){
+		while ((i != u.length) && (u[i]!=null)){	//Check for null values
 			uArray[i].a();
 			uArray[i].b();
 			uArray[i].c();
@@ -39,6 +45,32 @@ class B{
 }
 public class Exercise23 {
 	public static void main(String[] args) {
-		
+		A[] aArray = new A[5];
+		for (int i=0; i<5; i++){	//Create a group of A objects
+			aArray[i] = new A();
+		}
+		B b1 = new B();				//And a single B
+		for (int i=0; i<5; i++){
+			b1.setU(aArray[i].getU(), i);	//Fill the B with U references produced by the A objects
+		}
+		b1.moveU(b1.uArray);	//Use the B to call back into all the A objects
+		b1.nullU(2);
+		b1.nullU(4);			//Remove some of the U references from the B.
 	}
-}
+}/* Output:
+a()
+b()
+c()
+a()
+b()
+c()
+a()
+b()
+c()
+a()
+b()
+c()
+a()
+b()
+c()
+*/
