@@ -5,9 +5,9 @@ package chapter10_holding_your_objects;
  * to fill an array, an ArrayList, a LinkedList, a HashSet, a LinkedHashSet, and a TreeSet, then print each container.
  */
 import java.util.*;
-class StarWars {
-	public static String[] starwars = new String[9];
-	public StarWars(){
+class Generator {
+	public String[] starwars = new String[9];
+	public Generator(){
 		starwars[0] = "Luke Skywalker";
 		starwars[1] = "Han Solo"; 
 		starwars[2] = "Princess Leia Organa"; 
@@ -35,7 +35,7 @@ class StarWars {
 
 public class Exercise4 {
 	public static void main(String[] args) {
-		StarWars episode1 = new StarWars();
+		Generator episode1 = new Generator();
 		String[] stringarray = new String[11];
 		for (int i = 0; i < stringarray.length; i++){		//Array is created and populated in a lousy way
 			stringarray[i] = episode1.next();
@@ -50,4 +50,11 @@ public class Exercise4 {
 		System.out.println(episode1.populateCollection(new LinkedHashSet<String>(), 7));
 		System.out.println(episode1.populateCollection(new TreeSet<String>(), 12));
 	}
-}
+}/* Output:
+Luke Skywalker, Han Solo, Princess Leia Organa, Obi-Wan Kenobi, C-3PO, R2-D2, Chewbacca, Darth Vader, Luke Skywalker, Han Solo, Princess Leia Organa, 
+[Obi-Wan Kenobi, C-3PO, R2-D2, Chewbacca, Darth Vader, Luke Skywalker, Han Solo, Princess Leia Organa, Obi-Wan Kenobi, C-3PO, R2-D2]
+[Chewbacca, Darth Vader, Luke Skywalker, Han Solo, Princess Leia Organa, Obi-Wan Kenobi, C-3PO, R2-D2, Chewbacca, Darth Vader]
+[Chewbacca, Darth Vader, R2-D2, Luke Skywalker, C-3PO, Han Solo, Obi-Wan Kenobi, Princess Leia Organa]
+[Han Solo, Princess Leia Organa, Obi-Wan Kenobi, C-3PO, R2-D2, Chewbacca, Darth Vader, Luke Skywalker]
+[C-3PO, Chewbacca, Darth Vader, Han Solo, Luke Skywalker, Obi-Wan Kenobi, Princess Leia Organa, R2-D2]
+*/
