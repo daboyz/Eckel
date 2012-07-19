@@ -11,16 +11,11 @@ public class Exercise11 {
 			c.add(rand.nextInt(9));
 		return c;
 	}
-	public static Map populateMap(Map<Object, Object> c){
-		Random rand = new Random();
-		for(int i = 0; i <5; i++)
-			c.add(rand.nextInt(9), i);
-		return c;
-	}
 	public static void goPrint(Collection<Object> c){
 		Iterator<Object> it = c.iterator();
 		while (it.hasNext())
 			System.out.print(it.next() + " ");
+		System.out.println();
 	}
 	public static void main(String[] args){
 		goPrint(populate(new ArrayList<Object>()));
@@ -28,8 +23,11 @@ public class Exercise11 {
 		goPrint(populate(new HashSet<Object>()));
 		goPrint(populate(new TreeSet<Object>()));
 		goPrint(populate(new LinkedHashSet<Object>()));
-		goPrint(populateMap(new HashMap<Object,Object>()));
-		goPrint(populateMap(new TreeMap<Object,Object>()));
-		goPrint(populateMap(new LinkedHashMap<Object,Object>()));
 	}
-}
+}/* Output:
+6 0 3 4 4 
+6 5 8 3 0 
+0 5 7 8 
+0 3 4 7 
+2 1 8 4 
+*/
