@@ -14,7 +14,7 @@ public class Exercise2 {
 		Random rand = new Random();
 		int a = rand.nextInt(686);
 		int second = rand.nextInt(686);
-		for (int i=1; i<25; i++){
+		for (int i=2; i<25; i++){
 			System.out.println(compare (a,second));
 			a = rand.nextInt(686);
 		}
