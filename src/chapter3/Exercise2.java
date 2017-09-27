@@ -12,10 +12,11 @@ public class Exercise2 {
 	}
 	public static void main(String[] args){
 		Random rand = new Random();
-		for (int i=1; i<25; i++){
-			int a = rand.nextInt(686);
-			int b = rand.nextInt(686);
-			System.out.println(compare (a,b));
+		int a = rand.nextInt(686);
+		int second = rand.nextInt(686);
+		for (int i=2; i<25; i++){
+			System.out.println(compare (a,second));
+			a = rand.nextInt(686);
 		}
 	}
 }
